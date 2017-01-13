@@ -43,12 +43,36 @@ require_once dirname(__FILE__) . '/SpeedFreightShipmentAutoload.php';
  */
 $speedFreightShipmentServiceQuote = new SpeedFreightShipmentServiceQuote();
 // sample call for SpeedFreightShipmentServiceQuote::setSoapHeaderAuthenticationToken() in order to initialize required SoapHeader
-$speedFreightShipmentServiceQuote->setSoapHeaderAuthenticationToken(new SpeedFreightShipmentStructAuthenticationToken(/*** update parameters list ***/));
+$speedFreightShipmentStructAuthenticationToken = new SpeedFreightShipmentStructAuthenticationToken( array(
+		'loginId'       => 'LOGINID',
+		'password'      => 'PASSWORD',
+		'licenseKey'    => 'LICENSEKEY',
+		'accountNumber' => 'ACCOUNTNUMBER' ) );
+$speedFreightShipmentServiceQuote->setSoapHeaderAuthenticationToken( $speedFreightShipmentStructAuthenticationToken );
+// sample sender and receiver
+$structFreightShipmentQuoteRequest = new SpeedFreightShipmentStructFreightShipmentQuoteRequest();
+$structFreightShipmentQuoteRequest->setSenderState( 'DE' );
+$structFreightShipmentQuoteRequest->setSenderZip( '19808' );
+$structFreightShipmentQuoteRequest->setReceiverState( 'DC' );
+$structFreightShipmentQuoteRequest->setReceiverZip( '20252' );
+// sample array of line item
+$lineItemDetails = array(
+		new SpeedFreightShipmentStructWSLineItem( 50, 50, 'test line item' ) );
+// sample array of handling units
+$wsHandlingUnit = array(
+		new SpeedFreightShipmentStructWSHandlingUnit( 'BOX', 1, NULL, NULL, NULL, $lineItemDetails ) );
+$handlingUnitDetails = new SpeedFreightShipmentStructArrayOfWSHandlingUnit( $wsHandlingUnit );
+// sample commodity details
+$commdityDetails = new SpeedFreightShipmentStructFreightShipmentCommodityDetails( 'n', $handlingUnitDetails );
+$structFreightShipmentQuoteRequest->setCommdityDetails( $commdityDetails );
+// sample shipment
+$shipment = new SpeedFreightShipmentStructQuoteSpeedFreightShipment( $structFreightShipmentQuoteRequest );
 // sample call for SpeedFreightShipmentServiceQuote::quoteSpeedFreightShipment()
-if($speedFreightShipmentServiceQuote->quoteSpeedFreightShipment(new SpeedFreightShipmentStructQuoteSpeedFreightShipment(/*** update parameters list ***/)))
-    print_r($speedFreightShipmentServiceQuote->getResult());
-else
-    print_r($speedFreightShipmentServiceQuote->getLastError());
+if ( $speedFreightShipmentServiceQuote->quoteSpeedFreightShipment( $shipment ) ) {
+	print_r( $speedFreightShipmentServiceQuote->getResult() );
+} else {
+	print_r( $speedFreightShipmentServiceQuote->getLastError() );
+}
 
 /*********************************************
  * Example for SpeedFreightShipmentServiceBook
