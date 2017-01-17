@@ -35,7 +35,7 @@ class SpeedFreightShipmentClassMap
   'ArrayOfFreightShipmentVoidResult' => 'SpeedFreightShipmentStructArrayOfFreightShipmentVoidResult',
   'ArrayOfWSHandlingUnit' => 'SpeedFreightShipmentStructArrayOfWSHandlingUnit',
   'ArrayOfWSLineItem' => 'SpeedFreightShipmentStructArrayOfWSLineItem',
-  'AuthenticationToken' => 'SpeedFreightShipmentStructAuthenticationToken',
+  'AuthenticationToken' => 'Wwex\SpeedFreightShipment\Type\AuthenticationToken',
   'FreightShipmentAddressLabel' => 'SpeedFreightShipmentStructFreightShipmentAddressLabel',
   'FreightShipmentBOLLabel' => 'SpeedFreightShipmentStructFreightShipmentBOLLabel',
   'FreightShipmentBookRequest' => 'SpeedFreightShipmentStructFreightShipmentBookRequest',

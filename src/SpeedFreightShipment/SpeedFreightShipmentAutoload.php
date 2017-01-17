@@ -60,7 +60,7 @@ require_once dirname(__FILE__) . '/Freight/Notification/SpeedFreightShipmentStru
 require_once dirname(__FILE__) . '/Array/Notification/SpeedFreightShipmentStructArrayOfFreightShipmentCarrierNotification.php';
 require_once dirname(__FILE__) . '/Freight/Result/SpeedFreightShipmentStructFreightShipmentQuoteResult.php';
 require_once dirname(__FILE__) . '/Array/Result/SpeedFreightShipmentStructArrayOfFreightShipmentQuoteResult.php';
-require_once dirname(__FILE__) . '/Authentication/Token/SpeedFreightShipmentStructAuthenticationToken.php';
+require_once dirname( __FILE__ ) . '/Type/AuthenticationToken.php';
 require_once dirname(__FILE__) . '/Quote/SpeedFreightShipmentServiceQuote.php';
 require_once dirname(__FILE__) . '/Book/SpeedFreightShipmentServiceBook.php';
 require_once dirname(__FILE__) . '/Void/SpeedFreightShipmentServiceVoid.php';

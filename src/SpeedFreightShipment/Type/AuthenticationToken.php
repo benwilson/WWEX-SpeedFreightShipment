@@ -1,14 +1,17 @@
 <?php
+
+namespace Wwex\SpeedFreightShipment\Type;
+
 /**
  * AuthenticationToken
  *
  * @author        Ben Wilson
  * @link          https://github.com/benwilson
  * @package       SpeedFreightShipment
- * @subpackage    Structs
+ * @subpackage    Type
  *
  */
-class SpeedFreightShipmentStructAuthenticationToken
+class AuthenticationToken
 {
     /**
      * The loginId
@@ -44,7 +47,7 @@ class SpeedFreightShipmentStructAuthenticationToken
      * @param string $_password
      * @param string $_licenseKey
      * @param string $_accountNumber
-     * @return SpeedFreightShipmentStructAuthenticationToken
+     * @return AuthenticationToken
      */
     public function __construct($_loginId = NULL,$_password = NULL,$_licenseKey = NULL,$_accountNumber = NULL) {
 	    $properties = array(

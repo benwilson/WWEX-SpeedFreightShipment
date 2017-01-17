@@ -1,4 +1,7 @@
 <?php
+
+use Wwex\SpeedFreightShipment\Type\AuthenticationToken;
+
 /**
  * File for class SpeedFreightShipmentServiceBook
  * @package SpeedFreightShipment
@@ -20,13 +23,13 @@ class SpeedFreightShipmentServiceBook extends SpeedFreightShipmentWsdlClass
     /**
      * Sets the AuthenticationToken SoapHeader param
      * @uses SpeedFreightShipmentWsdlClass::setSoapHeader()
-     * @param SpeedFreightShipmentStructAuthenticationToken $_speedFreightShipmentStructAuthenticationToken
+     * @param AuthenticationToken $_speedFreightShipmentStructAuthenticationToken
      * @param string $_nameSpace http://www.wwexship.com
      * @param bool $_mustUnderstand
      * @param string $_actor
      * @return bool true|false
      */
-    public function setSoapHeaderAuthenticationToken(SpeedFreightShipmentStructAuthenticationToken $_speedFreightShipmentStructAuthenticationToken,$_nameSpace = 'http://www.wwexship.com',$_mustUnderstand = false,$_actor = null)
+    public function setSoapHeaderAuthenticationToken(AuthenticationToken $_speedFreightShipmentStructAuthenticationToken,$_nameSpace = 'http://www.wwexship.com',$_mustUnderstand = false,$_actor = null)
     {
         return $this->setSoapHeader($_nameSpace,'AuthenticationToken',$_speedFreightShipmentStructAuthenticationToken,$_mustUnderstand,$_actor);
     }
@@ -35,7 +38,7 @@ class SpeedFreightShipmentServiceBook extends SpeedFreightShipmentWsdlClass
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : AuthenticationToken
      * - SOAPHeaderNamespaces : http://www.wwexship.com
-     * - SOAPHeaderTypes : {@link SpeedFreightShipmentStructAuthenticationToken}
+     * - SOAPHeaderTypes : {@link AuthenticationToken}
      * - SOAPHeaders : required
      * @uses SpeedFreightShipmentWsdlClass::getSoapClient()
      * @uses SpeedFreightShipmentWsdlClass::setResult()
