@@ -25,7 +25,12 @@ class SpeedFreightShipmentWsdlClass extends stdClass implements ArrayAccess,Iter
      * Constant to define the default WSDL URI
      * @var string
      */
-    const VALUE_WSDL_URL = 'var/wsdltophp.com/storage/wsdls/35165-07413ab26bb23f8884bc8617c9846509/wsdl.xml';
+    const VALUE_WSDL_URL = 'http://www.wwexship.com/webServices/services/SpeedFreightShipment?wsdl';
+	/**
+	 * Constant to define the integration WSDL URI
+	 * @var string
+	 */
+	const VALUE_WSDL_URL_INTEGRATION = 'http://uat.wwex.com:8090/webServices/services/SpeedFreightShipment?wsdl';
     /**
      * Option key to define WSDL login
      * @var string
